@@ -1,3 +1,4 @@
+---
 # Extend default settings for all of my personal repositories defined in .github/settings.yml
 _extends: .github:common-settings.yaml
 
