@@ -1,0 +1,24 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>marcusrbrown/renovate-config"],
+  packageRules: [
+    {
+      description: "Disable digest pinning for Docker and Node.js images.",
+      matchFiles: [
+        ".devcontainer/Dockerfile.devcontainer",
+        "docker/Dockerfile",
+        "Dockerfile",
+      ],
+      matchPackageNames: [
+        "gcr.io/distroless/nodejs16-debian11",
+        "docker",
+        "node",
+      ],
+      pinDigests: false,
+    },
+  ],
+  postUpgradeTasks: {
+    commands: ["npx prettier@3.2.4 --no-color --write ."],
+    executionMode: "branch",
+  },
+}
