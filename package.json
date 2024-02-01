@@ -24,7 +24,7 @@
     "@gala-chain/api": "1.0.0",
     "@gala-chain/chaincode": "1.0.0",
     "dotenv": "16.4.1",
-    "fabric-contract-api": "2.4.2",
+    "fabric-contract-api": "2.5.4",
     "fabric-shim": "2.4.2"
   },
   "devDependencies": {
