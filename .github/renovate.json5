@@ -7,6 +7,10 @@
       matchFileNames: [".devcontainer/Dockerfile.devcontainer", "docker/Dockerfile", "Dockerfile"],
       matchPackageNames: ["gcr.io/distroless/nodejs16-debian11", "docker", "node"],
       pinDigests: false
+    },
+    {
+      description: "galachain monorepo",
+      matchSourceUrls: ["https://github.com/GalaChain/sdk"]
     }
   ],
   postUpgradeTasks: {
