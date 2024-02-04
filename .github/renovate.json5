@@ -11,6 +11,11 @@
     {
       description: "galachain monorepo",
       matchSourceUrls: ["https://github.com/GalaChain/sdk"]
+    },
+    {
+      description: "Update GalaChain packages.",
+      groupName: "GalaChain packages",
+      matchPackagePrefixes: ["@gala-chain/"]
     }
   ],
   postUpgradeTasks: {
