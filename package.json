@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@gala-chain/cli": "1.0.3",
-    "@gala-chain/test": "1.0.0",
+    "@gala-chain/test": "1.0.5",
     "@gala-chain/client": "1.0.3",
     "@types/axios": "0.14.0",
     "@types/jest": "28.1.8",
