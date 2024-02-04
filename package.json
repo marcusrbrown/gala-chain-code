@@ -21,7 +21,7 @@
     "update-snapshot": "jest --updateSnapshot"
   },
   "dependencies": {
-    "@gala-chain/api": "1.0.0",
+    "@gala-chain/api": "1.0.5",
     "@gala-chain/chaincode": "1.0.0",
     "dotenv": "16.4.1",
     "fabric-contract-api": "2.4.2",
