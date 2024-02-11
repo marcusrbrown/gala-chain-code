@@ -21,16 +21,16 @@
     "update-snapshot": "jest --updateSnapshot"
   },
   "dependencies": {
-    "@gala-chain/api": "1.0.6",
-    "@gala-chain/chaincode": "1.0.6",
+    "@gala-chain/api": "1.0.7",
+    "@gala-chain/chaincode": "1.0.7",
     "dotenv": "16.4.2",
     "fabric-contract-api": "2.4.2",
     "fabric-shim": "2.4.2"
   },
   "devDependencies": {
-    "@gala-chain/cli": "1.0.6",
-    "@gala-chain/client": "1.0.6",
-    "@gala-chain/test": "1.0.6",
+    "@gala-chain/cli": "1.0.7",
+    "@gala-chain/client": "1.0.7",
+    "@gala-chain/test": "1.0.7",
     "@types/jest": "28.1.8",
     "@types/node": "18.19.15",
     "@typescript-eslint/eslint-plugin": "6.21.0",
