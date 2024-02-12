@@ -32,7 +32,7 @@
     "@gala-chain/client": "1.0.7",
     "@gala-chain/test": "1.0.7",
     "@types/jest": "28.1.8",
-    "@types/node": "18.19.15",
+    "@types/node": "20.11.17",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "axios": "1.6.7",
