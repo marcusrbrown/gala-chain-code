@@ -1,6 +1,9 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["github>marcusrbrown/renovate-config"],
+  extends: [
+    "github>marcusrbrown/renovate-config",
+    "github>microsoft/m365-renovate-config:restrictNode(<=18)#v2"
+  ],
   packageRules: [
     {
       description: "Disable digest pinning for Docker and Node.js images.",
@@ -16,6 +19,11 @@
       description: "Update GalaChain packages.",
       groupName: "GalaChain packages",
       matchPackagePrefixes: ["@gala-chain/"]
+    },
+    {
+      description: "Restrict Hyperledger Fabric to 2.4",
+      groupName: "fabric-chaincode-node monorepo",
+      allowedVersions: ["<2.5.0"]
     }
   ],
   postUpgradeTasks: {
