@@ -2,33 +2,41 @@
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: [
     "github>marcusrbrown/renovate-config",
-    "github>microsoft/m365-renovate-config:restrictNode(<=18)"
+    "github>microsoft/m365-renovate-config:restrictNode(<=18)",
   ],
   packageRules: [
     {
       description: "Disable digest pinning for Docker and Node.js images.",
-      matchFileNames: [".devcontainer/Dockerfile.devcontainer", "docker/Dockerfile", "Dockerfile"],
-      matchPackageNames: ["gcr.io/distroless/nodejs16-debian11", "docker", "node"],
-      pinDigests: false
+      matchFileNames: [
+        ".devcontainer/Dockerfile.devcontainer",
+        "docker/Dockerfile",
+        "Dockerfile",
+      ],
+      matchPackageNames: [
+        "gcr.io/distroless/nodejs16-debian11",
+        "docker",
+        "node",
+      ],
+      pinDigests: false,
     },
     {
       description: "galachain monorepo",
-      matchSourceUrls: ["https://github.com/GalaChain/sdk"]
+      matchSourceUrls: ["https://github.com/GalaChain/sdk"],
     },
     {
       description: "Update GalaChain packages.",
       groupName: "GalaChain packages",
-      matchPackagePrefixes: ["@gala-chain/"]
+      matchPackagePrefixes: ["@gala-chain/"],
     },
     {
       description: "Restrict Hyperledger Fabric to 2.4",
       matchSourceUrls: ["https://github.com/hyperledger/fabric-chaincode-node"],
       groupName: "fabric-chaincode-node monorepo",
-      allowedVersions: ["<2.5.0"]
-    }
+      allowedVersions: "<2.5.0",
+    },
   ],
   postUpgradeTasks: {
     commands: ["npx prettier@3.2.4 --no-color --write ."],
-    executionMode: "branch"
-  }
+    executionMode: "branch",
+  },
 }
