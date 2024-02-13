@@ -22,6 +22,7 @@
     },
     {
       description: "Restrict Hyperledger Fabric to 2.4",
+      matchSourceUrls: ["https://github.com/hyperledger/fabric-chaincode-node"],
       groupName: "fabric-chaincode-node monorepo",
       allowedVersions: ["<2.5.0"]
     }
