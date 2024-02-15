@@ -54,12 +54,22 @@ jobs:
           cache: "npm"
           node-version-file: ".nvmrc"
       - run: npm ci
-      - run: |
-          npm run network:start # Run network in background and wait for it to start
       - run: npm run test
-      - run: |
-          npm run test:e2e
 
+  test-e2e:
+    name: Test E2E
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        with:
+          cache: "npm"
+          node-version-file: ".nvmrc"
+      - run: npm ci
+      - run: |
+          npm run network:start & # Run network in background
+          sleep 50 # Wait for the network to start
+          npm run test:e2e
           MAX_BLOCK_INDEX=$(curl --location 'http://localhost:3010/product-channel/blocks' --header 'Content-Type: application/json' | jq '.info.fromBlock')
           if [ $MAX_BLOCK_INDEX -lt 56]; then
             echo "The number of blocks is less than 56, exiting."
