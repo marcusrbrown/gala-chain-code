@@ -55,10 +55,9 @@ jobs:
           node-version-file: ".nvmrc"
       - run: npm ci
       - run: |
-          npm run network:start & # Run network in background and wait for it to start
+          npm run network:start # Run network in background and wait for it to start
       - run: npm run test
       - run: |
-          sleep 120
           npm run test:e2e
 
           MAX_BLOCK_INDEX=$(curl --location 'http://localhost:3010/product-channel/blocks' --header 'Content-Type: application/json' | jq '.info.fromBlock')
