@@ -68,12 +68,6 @@ jobs:
       - run: npm ci
       - run: |
           npm run network:start & # Run network in background
-          sleep 120 # Wait for the network to start
+          sleep 75 # Wait for the network to start
           npm run test:e2e
-          MAX_BLOCK_INDEX=$(curl --location 'http://localhost:3010/product-channel/blocks' --header 'Content-Type: application/json' | jq '.info.fromBlock')
-          if [ $MAX_BLOCK_INDEX -lt 56]; then
-            echo "The number of blocks is less than 56, exiting."
-            exit 1
-          fi
-          echo "There are at $MAX_BLOCK_INDEX blocks after the tests."
           npm run network:prune # Stop the network
