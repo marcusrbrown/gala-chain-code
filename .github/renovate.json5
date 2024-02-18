@@ -7,7 +7,7 @@
   packageRules: [
     {
       description: "Disable digest pinning for Docker and Node.js images.",
-      matchFileNames: [".devcontainer/Dockerfile.devcontainer", "docker/Dockerfile", "Dockerfile"],
+      matchFileNames: [".devcontainer/Dockerfile.devcontainer", "Dockerfile"],
       matchPackageNames: ["gcr.io/distroless/nodejs16-debian11", "docker", "node"],
       pinDigests: false
     },
@@ -28,7 +28,7 @@
     }
   ],
   postUpgradeTasks: {
-    commands: ["npx prettier@3.2.4 --no-color --write ."],
+    commands: ["npm run format", "npm run fix"],
     executionMode: "branch"
   }
 }

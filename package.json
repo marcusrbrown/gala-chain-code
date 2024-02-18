@@ -11,7 +11,7 @@
     "build:watch": "tsc -p tsconfig.json -w",
     "lint": "eslint . --ext .ts,.js",
     "fix": "eslint . --ext .ts,.js --fix",
-    "format": "prettier --config .prettierrc 'src/**/*.ts' 'e2e/**/*.ts' --write",
+    "format": "prettier . --write",
     "prepublishOnly": "npm run format && npm run build && npm run lint && npm run test",
     "network:start": "galachain network:up -C=product-channel -t=curator -n=basic-product -d=./ --envConfig=./.dev-env --watch",
     "network:prune": "galachain network:prune",
