@@ -68,6 +68,6 @@ jobs:
       - run: npm ci
       - run: |
           npm run network:start & # Run network in background
-          sleep 75 # Wait for the network to start
+          sleep 90 # Wait for the network to start
           npm run test:e2e
           npm run network:prune # Stop the network
