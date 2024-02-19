@@ -24,16 +24,16 @@
     "update-snapshots": "npm run start-network-for-ci && npm run update-test-snapshots && npm run update-test-e2e-snapshots && npm run network:prune"
   },
   "dependencies": {
-    "@gala-chain/api": "1.0.13",
-    "@gala-chain/chaincode": "1.0.13",
+    "@gala-chain/api": "1.0.14",
+    "@gala-chain/chaincode": "1.0.14",
     "dotenv": "16.4.4",
     "fabric-contract-api": "2.4.2",
     "fabric-shim": "2.4.2"
   },
   "devDependencies": {
-    "@gala-chain/cli": "1.0.13",
-    "@gala-chain/client": "1.0.13",
-    "@gala-chain/test": "1.0.13",
+    "@gala-chain/cli": "1.0.14",
+    "@gala-chain/client": "1.0.14",
+    "@gala-chain/test": "1.0.14",
     "@types/jest": "28.1.8",
     "@types/node": "18.19.17",
     "@typescript-eslint/eslint-plugin": "7.0.1",
