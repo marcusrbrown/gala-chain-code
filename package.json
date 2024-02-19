@@ -13,12 +13,12 @@
     "fix": "eslint . --ext .ts,.js --fix",
     "format": "prettier . --write",
     "prepublishOnly": "npm run format && npm run build && npm run lint && npm run test",
-    "network:start": "galachain network:up -C=product-channel -t=curator -n=basic-product -d=./ --envConfig=./.dev-env --watch",
+    "network:start": "galachain network:up -C=product-channel -t=curator -n=basic-product -d=./ --envConfig=./.dev-env",
     "network:prune": "galachain network:prune",
     "network:recreate": "npm run network:prune && rm -rf ./test-network && npm run network:start",
     "test": "jest",
     "test:e2e": "jest --config=e2e/jest.config.js",
-    "update-snapshot": "jest --updateSnapshot"
+    "update-snapshots": "npm run test -- -u"
   },
   "dependencies": {
     "@gala-chain/api": "1.0.13",
