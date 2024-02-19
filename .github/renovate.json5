@@ -25,6 +25,15 @@
       matchSourceUrls: ["https://github.com/hyperledger/fabric-chaincode-node"],
       groupName: "fabric-chaincode-node monorepo",
       allowedVersions: "<2.5.0"
+    },
+    {
+      description: "Update snapshots after test dependencies are updated.",
+      extends: ["packages:jsUnitTest"],
+      matchPackageNames: ["@gala-chain/test"],
+      postUpgradeTasks: {
+        commands: ["npm run update-snapshots"],
+        executionMode: "branch"
+      }
     }
   ],
   postUpgradeTasks: {
