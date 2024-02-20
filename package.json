@@ -18,10 +18,10 @@
     "network:recreate": "npm run network:prune && rm -rf ./test-network && npm run network:start",
     "test": "jest",
     "test:e2e": "jest --config=e2e/jest.config.js",
-    "start-network-for-ci": "(npm run network:start) &",
+    "start-network-for-ci": "(npm run network:start || true) &",
     "update-test-snapshots": "npm run test -- -u",
-    "update-test-e2e-snapshots": "sleep 90 && npm run test:e2e -- -u",
-    "update-snapshots": "npm run start-network-for-ci && npm run update-test-snapshots && npm run update-test-e2e-snapshots && npm run network:prune"
+    "update-test-e2e-snapshots": "jest --config=e2e/jest.config.js -u",
+    "update-snapshots": "npm run start-network-for-ci && npm run update-test-snapshots && sleep 90 && npm run update-test-e2e-snapshots && npm run network:prune || true"
   },
   "dependencies": {
     "@gala-chain/api": "1.0.14",
