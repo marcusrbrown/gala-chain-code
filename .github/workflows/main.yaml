@@ -9,7 +9,7 @@ name: main
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -67,7 +67,6 @@ jobs:
           node-version-file: ".nvmrc"
       - run: npm ci
       - run: |
-          npm run network:start & # Run network in background
-          sleep 90 # Wait for the network to start
+          npm run start-network-for-ci # Run network in background
+          npm run wait-for-network # Wait for the network to start
           npm run test:e2e
-          npm run network:prune # Stop the network
