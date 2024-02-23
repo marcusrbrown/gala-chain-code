@@ -19,9 +19,10 @@
     "test": "jest",
     "test:e2e": "jest --config=e2e/jest.config.js",
     "start-network-for-ci": "(npm run network:start || true) &",
+    "wait-for-network": "sleep 90",
     "update-test-snapshots": "npm run test -- -u",
     "update-test-e2e-snapshots": "npm run test:e2e -- -u",
-    "update-snapshots": "npm run start-network-for-ci && npm run update-test-snapshots && sleep 90 && npm run update-test-e2e-snapshots && npm run network:prune || true"
+    "update-snapshots": "npm run start-network-for-ci && npm run update-test-snapshots && npm run wait-for-network && npm run update-test-e2e-snapshots"
   },
   "dependencies": {
     "@gala-chain/api": "1.0.14",
